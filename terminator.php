@@ -48,13 +48,13 @@ function naechsterTermin($ergebnisArray)
 		$datumZeit = "".$value["Datum"]." ".$value["Uhrzeit"]; 
 		$unixTimeStamp = strtotime($datumZeit);
 		
-		//Wenn der Termin in der Zukunft liegt und noch kein anderer Termin als nächster feststeht
+		//Wenn der Termin in der Zukunft liegt und noch kein anderer Termin als nächster feststeht: Dieser Termin = nächster Termin
 		if($unixTimeStamp >= $jetzt && $naechsterTerminTimeStamp == NULL)
 		{
 			$naechsterTerminTimeStamp = $unixTimeStamp;
 			$naechsterTerminIndex = $key;
 		}
-		//Wenn der Termin in der Zukunft liegt, aber näher an $jetzt ist als der bisherige $naechsterTermin
+		//Wenn der Termin in der Zukunft liegt, aber näher an $jetzt ist als der bisherige $naechsterTermin: Dieser Termin = nächster Termin
 		elseif ($unixTimeStamp >= $jetzt && $unixTimeStamp < $naechsterTerminTimeStamp)
 		{
 			$naechsterTerminTimeStamp = $unixTimeStamp;
