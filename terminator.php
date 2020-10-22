@@ -92,6 +92,8 @@ function zeigeTermine($offset = 0)
 		//CSS Selektor (div class) generieren, p{nummer} // p = positiv -> in der Zukunft vom Startpunkt
 		$cssClass = "p" . strval(($naechsterTermin - $i));
 		
+		//erste Zeile erstellt HTML für Hauptseiten Eintrag
+		//zweite Zeile erstellt Popup für Eintrag mithilfe von terminMehrInfo()
 		echo "<div class=".$cssClass.">".$terminArray[$i]["Datum"]." ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]." ";
 		echo "<div class='popup' onclick='myFunction(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div></div>";
 	}
@@ -102,8 +104,10 @@ function zeigeTermine($offset = 0)
 		//CSS Selektor (div class) generieren, n{nummer} // n = negativ -> in der Vergangenheit vom Startpunkt
 		$cssClass = "n" . strval(($i - $naechsterTermin));
 		
+		//erste Zeile erstellt HTML für Hauptseiten Eintrag
+		//zweite Zeile erstellt Popup für Eintrag mithilfe von terminMehrInfo()
 		echo "<div class=".$cssClass.">".$terminArray[$i]["Datum"]." ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]." ";
-		echo "<a href='#' id='name'><img title='moreInfo' src='burgermenu.png'/></a></div>";
+		echo "<div class='popup' onclick='myFunction(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div></div>";
 		
 	}
 	
