@@ -1,0 +1,68 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.5fr 4fr 0.5fr;
+  grid-template-rows: 0.5fr 4fr 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". header_mid ."
+    ". termine ."
+    ". footer_mid .";
+}
+
+.termine {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "p5"
+    "p4"
+    "p3"
+    "p2"
+    "p1"
+    "p0"
+    "n1"
+    "n2"
+    "n3"
+    "n4"
+    "n5";
+  grid-area: termine;
+}
+
+.p0 { grid-area: p0;
+		border: 1px solid black;
+		text-align: center;}
+
+.n1 { grid-area: n1;
+		text-align: center; }
+
+.n2 { grid-area: n2;
+		text-align: center; }
+
+.n3 { grid-area: n3;
+		text-align: center; }
+
+.n4 { grid-area: n4;
+		text-align: center; }
+
+.n5 { grid-area: n5;
+		text-align: center; }
+
+.p1 { grid-area: p1;
+		text-align: center; }
+
+.p2 { grid-area: p2;
+		text-align: center; }
+
+.p3 { grid-area: p3;
+		text-align: center; }
+
+.p4 { grid-area: p4;
+		text-align: center; }
+
+.p5 { grid-area: p5;
+		text-align: center; }
+.header_mid { grid-area: header_mid;
+		text-align: center; }
+.footer_mid { grid-area: footer_mid;
+		text-align: center; }
