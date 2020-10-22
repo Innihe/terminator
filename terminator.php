@@ -93,7 +93,7 @@ function zeigeTermine($offset = 0)
 		$cssClass = "p" . strval(($naechsterTermin - $i));
 		
 		echo "<div class=".$cssClass.">".$terminArray[$i]["Datum"]." ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]." ";
-		echo "<div class='popup' onclick='myFunction()'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div></div>";
+		echo "<div class='popup' onclick='myFunction(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div></div>";
 	}
 	
 	//Von Index (naechsterTermin + 1) bis zum Ende des Arrays Einträge bauen
@@ -113,7 +113,7 @@ function zeigeTermine($offset = 0)
 //Generiert Mehr Info Popup-Inhalt für Termin mit übergebenem Array und Array Index
 function terminMehrInfo($terminArray, $arrayIndex)
 {
-	$infos = "<span class='popuptext' id='myPopup'>Titel: ".$terminArray[$arrayIndex]["Titel"]."<br>"
+	$infos = "<span class='popuptext' id='myPopup".$arrayIndex."'>Titel: ".$terminArray[$arrayIndex]["Titel"]."<br>"
 				."Fach: ".$terminArray[$arrayIndex]["Fach"]."<br>"
 				."Art: ".$terminArray[$arrayIndex]["Art"]."<br>"
 				."Datum: ".$terminArray[$arrayIndex]["Datum"]."<br>"
