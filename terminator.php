@@ -21,6 +21,9 @@
 -->
 <?php					
 require "db_terminator.php";
+session_start();
+
+
 
 //Gibt als return ein numerisch assoziatives Array aller Termine, chronologisch absteigend sortiert
 function terminArray()
@@ -73,10 +76,11 @@ function naechsterTermin($ergebnisArray)
 	return $naechsterTerminIndex;	
 }
 
-function zeigeTermine()
+//$offset als signed integer um gewählten Termin zu ändern (in relation zum zeitlich nächsten Termin) +1, +2, -1, -2 usw
+function zeigeTermine($offset = 0)
 {
 	$terminArray = terminArray();
-	$naechsterTermin = naechsterTermin($terminArray);
+	$naechsterTermin = naechsterTermin($terminArray) + $offset;
 	$anzahlTermine = count($terminArray);
 	
 	
@@ -88,7 +92,8 @@ function zeigeTermine()
 		//CSS Selektor (div class) generieren, p{nummer} // p = positiv -> in der Zukunft vom Startpunkt
 		$cssClass = "p" . strval(($naechsterTermin - $i));
 		
-		echo "<div class=".$cssClass.">".$terminArray[$i]["Datum"]." ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
+		echo "<div class=".$cssClass.">".$terminArray[$i]["Datum"]." ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]." ";
+		echo "<div class='popup' onclick='myFunction()'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div></div>";
 	}
 	
 	//Von Index (naechsterTermin + 1) bis zum Ende des Arrays Einträge bauen
@@ -97,12 +102,27 @@ function zeigeTermine()
 		//CSS Selektor (div class) generieren, n{nummer} // n = negativ -> in der Vergangenheit vom Startpunkt
 		$cssClass = "n" . strval(($i - $naechsterTermin));
 		
-		echo "<div class=".$cssClass.">".$terminArray[$i]["Datum"]." ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
+		echo "<div class=".$cssClass.">".$terminArray[$i]["Datum"]." ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]." ";
+		echo "<a href='#' id='name'><img title='moreInfo' src='burgermenu.png'/></a></div>";
 		
 	}
 	
 	echo"</div>";
-	
+}
+
+//Generiert Mehr Info Popup-Inhalt für Termin mit übergebenem Array und Array Index
+function terminMehrInfo($terminArray, $arrayIndex)
+{
+	$infos = "<span class='popuptext' id='myPopup'>Titel: ".$terminArray[$arrayIndex]["Titel"]."<br>"
+				."Fach: ".$terminArray[$arrayIndex]["Fach"]."<br>"
+				."Art: ".$terminArray[$arrayIndex]["Art"]."<br>"
+				."Datum: ".$terminArray[$arrayIndex]["Datum"]."<br>"
+				."Uhrzeit: ".$terminArray[$arrayIndex]["Uhrzeit"]."<br>"
+				."Notizen: ".$terminArray[$arrayIndex]["Notizen"]."<br>"
+				."VerfasserIn: ".$terminArray[$arrayIndex]["Ersteller"]."<br></span>";
+				
+	return $infos;
+}
 	
 	
 	
@@ -114,4 +134,4 @@ function zeigeTermine()
 	echo	"<div class='m1'>gestern</div>";
 	echo	"<div class='m2'>vorgestern</div>";
 	echo"</div>"; */
-}
+
