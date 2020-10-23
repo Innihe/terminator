@@ -1,28 +1,7 @@
-<!-- Plan: Termine pullen und chronologisch sortiert in ein array
-		bestimmen was der nächste stattfindende Termin im Bezug auf das heutige Datum ist
-		Diesen Eintrag im Array als Startpunkt speichern;  zb nächster Termin Array Index 4: $jetzt = 4; termine[jetzt].datum
-		diese div classes dynamisch erzeugen heute = termine[jetzt], morgen termine[(jetzt + 1)], gestern termine[(jetzt - 1)];
-		auf scroll event jetzt+=1 oder jetzt-=1 und html neu bauen
-		~~ dennis fragen ob er bock hat mit css transition was zu bauen, dass es aussieht als würde der text scrollen~~
-		
-		
-		um rauszufinden welcher termin am nächsten dran ist:
-			die mysql dates müssen entweder in php date form gebracht werden oder unix time stamp, aufjedenfall umwandeln, so dass
-			in php verglichen werden kann
-			dann das array durchgehen
-			
-			int closest;
-			foreach eintrag in array
-				if to_unixtimestamp(eintrag.datum) >= to_unixtimestamp(jetzt())
-					closest = eintrag.index;
-				else 
-					break;
-------------------------------------------------------
+
 -->
 <?php					
 require "db_terminator.php";
-session_start();
-
 
 
 //Gibt als return ein numerisch assoziatives Array aller Termine, chronologisch absteigend sortiert
@@ -155,12 +134,4 @@ function terminMehrInfo($terminArray, $arrayIndex)
 				<button type='submit' name='update'>Update</button></span>";
 } */
 	
-	/* echo "DEBUG: anzahlTermine = ".$anzahlTermine;
-	echo"<div class='termine'>";
-	echo	"<div class='p0'>".$terminArray[$naechsterTermin]["Datum"]." ".$terminArray[$naechsterTermin]["Titel"]." ".$terminArray[$naechsterTermin]["Fach"]."</div>";
-	echo	"<div class='p1'>".$terminArray[$naechsterTermin-1]["Datum"]." ".$terminArray[$naechsterTermin-1]["Titel"]." ".$terminArray[$naechsterTermin-1]["Fach"]."</div>";
-	echo	"<div class='p2'>uebermorgen</div>";
-	echo	"<div class='m1'>gestern</div>";
-	echo	"<div class='m2'>vorgestern</div>";
-	echo"</div>"; */
 
