@@ -3,7 +3,7 @@
 <?php
 	require 'terminator.php';
 	session_start();
-?> 
+?>
 <script>
 // When the user clicks on <div>, open the popup
 function myFunction(arrayIndex) {
@@ -15,12 +15,20 @@ function myFunction(arrayIndex) {
 		<link rel="stylesheet" href="stylesheet.css">
 		<title>Terminator</title>
 	</head>
-	<body>	
+	<body>
 		<div class="grid-container">
 			<?php zeigeTermine(); ?>
 			<div class="header_mid"><h4>TERMINATOR</h4></div>
 			<div class="footer_mid">
 			</div>
 		</div>
+
+	<footer>
+   <div id="extra">
+		 <img src="extra.png">
+   </div>
+	</footer>
 	</body>
+
+
 </html>
