@@ -90,12 +90,16 @@ function zeigeTermine($offset = 0)
 	for($i = $naechsterTermin; $i >= 0; $i--)
 	{
 		//CSS Selektor (div class) generieren, p{nummer} // p = positiv -> in der Zukunft vom Startpunkt
-		$cssClass = "p" . strval(($naechsterTermin - $i));
+		$cssClass = ($naechsterTermin - $i);
 		
 		//erste Zeile erstellt HTML für Hauptseiten Eintrag
-		//zweite Zeile erstellt Popup für Eintrag mithilfe von terminMehrInfo()
-		echo "<div class=".$cssClass.">".$terminArray[$i]["Datum"]." ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]." ";
-		echo "<div class='popup' onclick='myFunction(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div></div>";
+		//zweite Zeile erstellt Popup Button und Popup Inhalt mithilfe von terminMehrInfo()
+		//dritte Zeile bindet Edit Button ein
+		echo "<div class='pa".$cssClass."'>".$terminArray[$i]["Datum"]."</div><div class='pb".$cssClass."'> ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
+		echo "<div class='pc".$cssClass."'><div class='popup' onclick='myFunction(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div>";
+		echo "<a href='update.php'><img title='edit' src='edit.png'/></a></div>";
+		// WIP edit als popup: echo "<div class='pc".$cssClass."'><div class='popup' onclick='myFunction(".$i."edit)'><img title='edit' src='edit.png'/>".editFormular($i)."</div>";
+		
 	}
 	
 	//Von Index (naechsterTermin + 1) bis zum Ende des Arrays Einträge bauen
@@ -129,6 +133,27 @@ function terminMehrInfo($terminArray, $arrayIndex)
 }
 	
 	
+	//WIP Edit als Popup
+/* function editFormular($arrayIndex)
+{
+	$formular = "<span class='popuptext' id='myPopup".$arrayIndex."edit'> .
+				<form action='' method='post'> .
+				<input type='text' name='title' placeholder='Titel'> .
+				<br> .
+				<input type='date' name='date' placeholder='Datum'> .
+				<br> .
+				<input type='time' name='time' placeholder='Zeit'> .
+				<br> .
+				<input type='text' name='note' placeholder='Notizen'> .
+				<br> .
+				<input type='text' name='creator' value='Ersteller'> .
+				<br> .
+				<input type='text' name='subject' value='Fach'> .
+				<br> .
+				<input type='text' name='type' value='Art'> .
+				<br> .
+				<button type='submit' name='update'>Update</button></span>";
+} */
 	
 	/* echo "DEBUG: anzahlTermine = ".$anzahlTermine;
 	echo"<div class='termine'>";

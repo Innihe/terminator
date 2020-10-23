@@ -36,75 +36,141 @@ footer {
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
-    "p5a p5 p5c"
-    "p4a p4 p4c"
-    "p3a p3 p3c"
-    "p2a p2 p2c"
-    "p1a p1 p1c"
-    "p0a p0 p0c"
-    "n1a n1 n1c"
-    "n2a n2 n2c"
-    "n3a n3 n3c"
-    "n4a n4 n4c"
-    "n5a n5 n5c";
+    "pa5 pb5 pc5"
+    "pa4 pb4 pc4"
+    "pa3 pb3 pc3"
+    "pa2 pb2 pc2"
+    "pa1 pb1 pc1"
+    "pa0 pb0 pc0"
+    "na1 nb1 nc1"
+    "na2 nb2 nc2"
+    "na3 nb3 nc3"
+    "na4 nb4 nc4"
+    "na5 nb5 nc5";
   grid-area: termine;
 }
+.pa0 { grid-area: pa0;
+		text-align: left;}
 
-.p0 { grid-area: p0;
+.na1 { grid-area: na1;
+		text-align: left;}
+
+.na2 { grid-area: na2;
+		text-align: left;}
+
+.na3 { grid-area: na3;
+		text-align: left;}
+
+.na4 { grid-area: na4;
+		text-align: left;}
+
+.na5 { grid-area: na5;
+		text-align: left;}
+
+.pa1 { grid-area: pa1;
+		text-align: left;}
+
+.pa2 { grid-area: pa2;
+		text-align: left;}
+
+.pa3 { grid-area: pa3;
+		text-align: left;}
+
+.pa4 { grid-area: pa4;
+		text-align: left;}
+
+.pa5 { grid-area: pa5;
+		text-align: left;}
+
+.pb0 { grid-area: pb0;
 		border: 3px solid black;
 		text-align: left;
     color: white;
     font-size: 36px;}
 
-.n1 { grid-area: n1;
+.nb1 { grid-area: nb1;
 		text-align: left;
     color: green;
     font-size: 31px;}
 
-.n2 { grid-area: n2;
+.nb2 { grid-area: nb2;
 		text-align: left;
     color: green;
     font-size: 26px;}
 
-.n3 { grid-area: n3;
+.nb3 { grid-area: nb3;
 		text-align: left;
     color: green;
     font-size: 21px;}
 
-.n4 { grid-area: n4;
+.nb4 { grid-area: nb4;
 		text-align: left;
     color: green;
     font-size: 16px;}
 
-.n5 { grid-area: n5;
+.nb5 { grid-area: nb5;
 		text-align: left;
     color: green;
     font-size: 11px;}
 
-.p1 { grid-area: p1;
+.pb1 { grid-area: pb1;
 		text-align: left;
     color: red;
     font-size: 31px;}
 
-.p2 { grid-area: p2;
+.pb2 { grid-area: pb2;
 		text-align: left;
     color: red;
     font-size: 26px;}
 
-.p3 { grid-area: p3;
+.pb3 { grid-area: pb3;
 		text-align: left;
     color: red;
     font-size: 21px;}
 
-.p4 { grid-area: p4;
+.pb4 { grid-area: pb4;
 		text-align: left;
     color: red;
     font-size: 16px;}
 
-.p5 { grid-area: p5;
+.pb5 { grid-area: pb5;
 		text-align: left;
     color: red;
     font-size: 11px;}
+
+.pc0 { grid-area: pc0;
+    text-align: left;}
+
+.nc1 { grid-area: nc1;
+    text-align: left;}
+
+.nc2 { grid-area: nc2;
+  	text-align: left;}
+
+.nc3 { grid-area: nc3;
+  	text-align: left;}
+
+.nc4 { grid-area: nc4;
+    text-align: left;}
+
+.nc5 { grid-area: nc5;
+    text-align: left;}
+
+.pc1 { grid-area: pc1;
+    text-align: left;}
+
+.pc2 { grid-area: pc2;
+    text-align: left;}
+
+.pc3 { grid-area: pc;
+    text-align: left;}
+
+.pc4 { grid-area: pc4;
+  	text-align: left;}
+
+.pc5 { grid-area: pc5;
+    text-align: left;}
+
 
 .header_mid { grid-area: header_mid;
 		text-align: center;
