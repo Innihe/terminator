@@ -85,12 +85,14 @@ function zeigeTermine($offset = 0)
 	for($i = $naechsterTermin + 1; $i < $anzahlTermine; $i++)
 	{
 		//CSS Selektor (div class) generieren, n{nummer} // n = negativ -> in der Vergangenheit vom Startpunkt
-		$cssClass = "n" . strval(($i - $naechsterTermin));
+		$cssClass = ($i - $naechsterTermin);
 		
 		//erste Zeile erstellt HTML für Hauptseiten Eintrag
 		//zweite Zeile erstellt Popup für Eintrag mithilfe von terminMehrInfo()
-		echo "<div class=".$cssClass.">".$terminArray[$i]["Datum"]." ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]." ";
-		echo "<div class='popup' onclick='myFunction(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div></div>";
+		//dritte Zeile bindet Edit Button ein
+		echo "<div class='na".$cssClass."'>".$terminArray[$i]["Datum"]."</div><div class='nb".$cssClass."'>".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
+		echo "<div class='nc".$cssClass."'><div class='popup' onclick='myFunction(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div>";
+		echo "<a href='update.php'><img title='edit' src='edit.png'/></a></div>";
 		
 	}
 	
