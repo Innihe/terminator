@@ -20,6 +20,7 @@ function myFunction(arrayIndex) {
 			<?php zeigeTermine(); ?>
 			<div class="header_mid"><h4>TERMINATOR</h4></div>
 			<div class="footer_mid">
+			
 			</div>
 		</div>
 

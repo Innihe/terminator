@@ -36,17 +36,17 @@ footer {
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
-    "pa5 p5 pc5"
-    "pa4 p4 pc4"
-    "pa3 p3 pc3"
-    "pa2 p2 pc2"
-    "pa1 p1 pc1"
-    "pa0 p0 pc0"
-    "na1 n1 nc1"
-    "na2 n2 nc2"
-    "na3 n3 nc3"
-    "na4 n4 nc4"
-    "na5 n5 nc5";
+    "p5a p5 p5c"
+    "p4a p4 p4c"
+    "p3a p3 p3c"
+    "p2a p2 p2c"
+    "p1a p1 p1c"
+    "p0a p0 p0c"
+    "n1a n1 n1c"
+    "n2a n2 n2c"
+    "n3a n3 n3c"
+    "n4a n4 n4c"
+    "n5a n5 n5c";
   grid-area: termine;
 }
 
