@@ -1,5 +1,6 @@
 <?php					
 require "db_terminator.php";
+setlocale(LC_TIME, "de_DE.utf8"); //Date Umgebung auf Deutschland eingestellt
 
 
 //Gibt als return ein numerisch assoziatives Array aller Termine, chronologisch absteigend sortiert
@@ -72,10 +73,10 @@ function zeigeTermine($offset = 0)
 		//erste Zeile erstellt HTML für Hauptseiten Eintrag
 		//zweite Zeile erstellt Popup Button und Popup Inhalt mithilfe von terminMehrInfo()
 		//dritte Zeile bindet Edit Button ein
-		echo "<div class='pa".$cssClass."'>".$terminArray[$i]["Datum"]."</div><div class='pb".$cssClass."'> ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
+		echo "<div class='pa".$cssClass."'>".strftime("%a", strtotime($terminArray[$i]["Datum"]))."  ".date('d.m.Y', strtotime($terminArray[$i]["Datum"]))."</div><div class='pb".$cssClass."'> ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
 		echo "<div class='pc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div>";
 		echo "<a href='../private/edit.php?id=".$terminArray[$i]["ID"]."'><img title='edit' src='edit.png'/></a></div>";
-		// WIP edit als popup: echo "<div class='pc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i."edit)'><img title='edit' src='edit.png'/>".editFormular($i)."</div>";
+		//WIP Formular als Popup echo "<div class='pc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i."edit)'><img title='edit' src='edit.png'/>".editFormular($i)."</div>";
 	}
 	
 	//Von Index (naechsterTermin + 1) bis zum Ende des Arrays Einträge bauen
@@ -87,7 +88,7 @@ function zeigeTermine($offset = 0)
 		//erste Zeile erstellt HTML für Hauptseiten Eintrag
 		//zweite Zeile erstellt Popup für Eintrag mithilfe von terminMehrInfo()
 		//dritte Zeile bindet Edit Button ein
-		echo "<div class='na".$cssClass."'>".$terminArray[$i]["Datum"]."</div><div class='nb".$cssClass."'>".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
+		echo "<div class='na".$cssClass."'>".strftime("%a", strtotime($terminArray[$i]["Datum"]))."  ".date('d.m.Y', strtotime($terminArray[$i]["Datum"]))."</div><div class='nb".$cssClass."'>".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
 		echo "<div class='nc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div>";
 		echo "<a href='../private/edit.php?id=".$terminArray[$i]["ID"]."'><img title='edit' src='edit.png'/></a></div>";
 		
@@ -114,23 +115,24 @@ function terminMehrInfo($terminArray, $arrayIndex)
 	//WIP Edit als Popup
 /* function editFormular($arrayIndex)
 {
-	$formular = "<span class='popuptext' id='myPopup".$arrayIndex."edit'> .
-				<form action='' method='post'> .
-				<input type='text' name='title' placeholder='Titel'> .
-				<br> .
-				<input type='date' name='date' placeholder='Datum'> .
-				<br> .
-				<input type='time' name='time' placeholder='Zeit'> .
-				<br> .
-				<input type='text' name='note' placeholder='Notizen'> .
-				<br> .
-				<input type='text' name='creator' value='Ersteller'> .
-				<br> .
-				<input type='text' name='subject' value='Fach'> .
-				<br> .
-				<input type='text' name='type' value='Art'> .
-				<br> .
-				<button type='submit' name='update'>Update</button></span>";
-} */
-	
+	$formular = "<span class='popuptext' id='myPopup".$arrayIndex."edit'>" .
+				"<form action='' method='post'>" .
+				"<input type='text' name='title' placeholder='Titel'>" .
+				"<br>" .
+				"<input type='date' name='date' placeholder='Datum'>" .
+				"<br>" .
+				"<input type='time' name='time' placeholder='Zeit'>" .
+				"<br>" .
+				"<input type='text' name='note' placeholder='Notizen'>" .
+				"<br>" .
+				"<input type='text' name='creator' value='Ersteller'>" .
+				"<br>" .
+				"<input type='text' name='subject' value='Fach'>" .
+				"<br>" .
+				"<input type='text' name='type' value='Art'>" .
+				"<br>" .
+				"<button type='submit' name='update'>Update</button> HELLO WORLD</span>";
+	return $formular;
+}
+	 */
 

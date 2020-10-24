@@ -3,6 +3,7 @@
 <?php
 	require '../private/terminator.php';
 	session_start();
+setlocale(LC_TIME, "de_DE.utf8"); //Zeitumgebung Deutschland
 ?>
 <script>
 

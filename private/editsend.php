@@ -18,6 +18,11 @@
 		//Termin updaten über db_terminator.php -> db_UpDateTermin()
 		db_UpdateTermin($id, $datum, $ersteller, $fach, $notizen, $titel, $uhrzeit, $art);
 		
+		
+		//Zurück
+		header("Location: ../public/index.php");
+		die();
+		
 
 	}
 		
