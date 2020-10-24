@@ -73,9 +73,9 @@ function zeigeTermine($offset = 0)
 		//zweite Zeile erstellt Popup Button und Popup Inhalt mithilfe von terminMehrInfo()
 		//dritte Zeile bindet Edit Button ein
 		echo "<div class='pa".$cssClass."'>".$terminArray[$i]["Datum"]."</div><div class='pb".$cssClass."'> ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
-		echo "<div class='pc".$cssClass."'><div class='popup' onclick='myFunction(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div>";
+		echo "<div class='pc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div>";
 		echo "<a href='../private/edit.php?id=".$terminArray[$i]["ID"]."'><img title='edit' src='edit.png'/></a></div>";
-		// WIP edit als popup: echo "<div class='pc".$cssClass."'><div class='popup' onclick='myFunction(".$i."edit)'><img title='edit' src='edit.png'/>".editFormular($i)."</div>";
+		// WIP edit als popup: echo "<div class='pc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i."edit)'><img title='edit' src='edit.png'/>".editFormular($i)."</div>";
 	}
 	
 	//Von Index (naechsterTermin + 1) bis zum Ende des Arrays Einträge bauen
@@ -88,7 +88,7 @@ function zeigeTermine($offset = 0)
 		//zweite Zeile erstellt Popup für Eintrag mithilfe von terminMehrInfo()
 		//dritte Zeile bindet Edit Button ein
 		echo "<div class='na".$cssClass."'>".$terminArray[$i]["Datum"]."</div><div class='nb".$cssClass."'>".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
-		echo "<div class='nc".$cssClass."'><div class='popup' onclick='myFunction(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div>";
+		echo "<div class='nc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div>";
 		echo "<a href='../private/edit.php?id=".$terminArray[$i]["ID"]."'><img title='edit' src='edit.png'/></a></div>";
 		
 	}

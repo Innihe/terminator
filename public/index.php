@@ -5,8 +5,9 @@
 	session_start();
 ?>
 <script>
-// When the user clicks on <div>, open the popup
-function myFunction(arrayIndex) {
+
+//
+function popupUmschalten(arrayIndex) {
   var popup = document.getElementById("myPopup"+arrayIndex);
   popup.classList.toggle("show");
 }
