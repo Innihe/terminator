@@ -5,7 +5,7 @@
 
 
 	/// db_connect() baut eine Verbindung zur Datenbank auf und liefert das erstellte Objekt als Rückgabewert
-	function db_connect()
+	function db_Connect()
 	{
 		//Datenbank Login Daten
 		$servername = "localhost";
@@ -29,7 +29,7 @@
 	
 	function db_PullAll() 
 	{
-		$conn = db_connect(); //Funktion db_connect() nutzen um Verbindung herzustellen und Rückgabeobjekt in $conn speichern
+		$conn = db_Connect(); //Funktion db_Connect() nutzen um Verbindung herzustellen und Rückgabeobjekt in $conn speichern
 		//Alle Termine und Informationen aus der DB holen, Einträge absteigend nach Feld "datum sortieren"  und als Objekt übergeben
 		//kein prepared statement notwendig weil kein user input //
 	
@@ -38,6 +38,36 @@
 					or die($conn->error); //Wenn Abfrage fehlschlägt Abbruch und Fehlermeldung
 		return $ergebnis; //Abfrageergebnisobjekt als Rückgabewert
 		db_Close($conn); // Verbindung über dbClose() schliessen, $conn Objekt übergeben
+	}
+	
+	
+	function db_PullOne($terminID)
+	{
+		$conn = db_Connect();  //Funktion db_Connect() nutzen um Verbindung herzustellen und Rückgabeobjekt in $conn speichern
+		//Abfrage mit Prepared Statement falls $terminID manipuliert wurde
+		$queryStatement = $conn->prepare("SELECT * FROM termine WHERE termine.ID = ?")
+							or die($conn->error);
+		$queryStatement->bind_param("i", $terminID);
+		$queryStatement->execute();
+		$ergebnis = $queryStatement->get_result();
+		$ergebnis = $ergebnis->fetch_object();
+		return $ergebnis;
+		db_Close($conn);
+	}
+	
+	function db_UpdateTermin($id, $datum, $ersteller, $fach, $notizen, $titel, $uhrzeit, $art)
+	{
+		$conn = db_Connect(); //Funktion db_Connect() nutzen um Verbindung herzustellen und Rückgabeobjekt in $conn speichern
+		
+			//Update mit Prepared Statement
+			$updateStatement = $conn->prepare("UPDATE termine 
+											SET termine.Art = ?, termine.Datum = ?, termine.Ersteller = ?, termine.Fach = ?, termine.Notizen = ?, termine.Titel = ?, termine.Uhrzeit = ?
+											WHERE termine.ID = ?")
+							or die($conn->error);
+			$updateStatement->bind_param("sssssssi", $art, $datum, $ersteller, $fach, $notizen, $titel, $uhrzeit, $id);
+			$updateStatement->execute();
+
+		db_Close($conn); // Verbindung über db_Close() schliessen, $conn Objekt übergeben
 	}
 	
 	function db_Close($conn)

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <?php
-	require 'terminator.php';
+	require '../private/terminator.php';
 	session_start();
 ?>
 <script>
