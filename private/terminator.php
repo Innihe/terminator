@@ -61,7 +61,7 @@ function zeigeTermine($offset = 0)
 	$naechsterTermin = naechsterTermin($terminArray) + $offset;
 	$anzahlTermine = count($terminArray);
 	
-	echo "<div class='footer_mid'><a href='insert.php'><div class='addimg'><img title='add' src='extra.png'/></div></div>";
+	echo "<div class='footer_mid'><a href='insert.php'><div class='addimg'><img title='add' src='extra.png'/></a></div></div>";
 	
 	echo"<div class='termine'>";
 	
