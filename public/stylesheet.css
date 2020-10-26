@@ -1,6 +1,6 @@
 html {
   font-size: 16px;
-  background-color: white;
+  background-color: grey;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -10,19 +10,21 @@ body {
 }
 
 footer {
- color: grey;
- background-color: grey;
+ color: blue;
+ background-color: blue;
  text-align:center;
+ height:10%;
+ width:100%;
+ top:2;
+ right:0;
+ 
 }
 
-#extra{
-
-}
 
 .grid-container {
   display: grid;
-  grid-template-columns: 0.5fr 4fr 0.5fr;
-  grid-template-rows: 0.5fr 4fr 0.5fr;
+  grid-template-columns: 2fr auto 2fr;
+  grid-template-rows: auto 0.5fr auto;
   gap: 0px 0px;
   grid-template-areas:
     ". header_mid ."
@@ -32,7 +34,7 @@ footer {
 
 .termine {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: auto auto auto;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
@@ -50,126 +52,181 @@ footer {
   grid-area: termine;
 }
 .pa0 { grid-area: pa0;
-		text-align: left;}
+		text-align: right;
+		padding-right:20px;
+		color: black;
+		font-size: 36px;}
 
 .na1 { grid-area: na1;
-		text-align: left;}
+		text-align: right;
+		padding-right:20px;
+		color: black;
+		font-size: 31px;}
 
 .na2 { grid-area: na2;
-		text-align: left;}
+		text-align: right;
+		padding-right:20px;
+		color: black;
+		font-size: 26px;}
 
 .na3 { grid-area: na3;
-		text-align: left;}
+		text-align: right;
+		padding-right:20px;
+		color: black;
+		font-size: 21px;}
 
 .na4 { grid-area: na4;
-		text-align: left;}
+		text-align: right;
+		padding-right:20px;
+		color: black;
+		font-size: 16px;}
 
 .na5 { grid-area: na5;
-		text-align: left;}
+		text-align: right;
+		padding-right:20px;
+		color: black;
+		font-size: 11px;}
 
 .pa1 { grid-area: pa1;
-		text-align: left;}
+		text-align: right;
+		padding-right:20px;
+		color: black;
+		font-size: 31px;}
 
 .pa2 { grid-area: pa2;
-		text-align: left;}
+		text-align: right;
+		padding-right:20px;
+		color: black;
+		font-size: 26px;}
 
 .pa3 { grid-area: pa3;
-		text-align: left;}
+		text-align: right;
+		padding-right:20px;
+		color: black;
+		font-size: 21px;}
 
 .pa4 { grid-area: pa4;
-		text-align: left;}
+		text-align: right;
+		padding-right:20px;
+		color: black;
+		font-size: 16px;}
 
 .pa5 { grid-area: pa5;
-		text-align: left;}
+		text-align: right;
+		padding-right:20px;
+		color: black;
+		font-size: 11px;}
 
 .pb0 { grid-area: pb0;
 		border: 3px solid black;
 		text-align: left;
-    color: white;
-    font-size: 36px;}
+		color: white;
+		font-size: 36px;}
 
 .nb1 { grid-area: nb1;
 		text-align: left;
-    color: green;
-    font-size: 31px;}
+		color: red;
+		font-size: 31px;}
 
 .nb2 { grid-area: nb2;
 		text-align: left;
-    color: green;
-    font-size: 26px;}
+		color: red;
+		font-size: 26px;}
 
 .nb3 { grid-area: nb3;
 		text-align: left;
-    color: green;
-    font-size: 21px;}
+		color: red;
+		font-size: 21px;}
 
 .nb4 { grid-area: nb4;
 		text-align: left;
-    color: green;
-    font-size: 16px;}
+		color: red;
+		font-size: 16px;}
 
 .nb5 { grid-area: nb5;
 		text-align: left;
-    color: green;
-    font-size: 11px;}
+		color: red;
+		font-size: 11px;}
 
 .pb1 { grid-area: pb1;
 		text-align: left;
-    color: red;
-    font-size: 31px;}
+		color: green;
+		font-size: 31px;}
 
 .pb2 { grid-area: pb2;
 		text-align: left;
-    color: red;
-    font-size: 26px;}
+		color: green;
+		font-size: 26px;}
 
 .pb3 { grid-area: pb3;
 		text-align: left;
-    color: red;
-    font-size: 21px;}
+		color: green;
+		font-size: 21px;}
 
 .pb4 { grid-area: pb4;
 		text-align: left;
-    color: red;
-    font-size: 16px;}
+		color: green;
+		font-size: 16px;}
 
 .pb5 { grid-area: pb5;
 		text-align: left;
-    color: red;
-    font-size: 11px;}
+		color: green;
+		font-size: 11px;}
 
 .pc0 { grid-area: pc0;
-    text-align: left;}
+		text-align: left;
+	    color: black;
+		font-size: 36px;}
 
 .nc1 { grid-area: nc1;
-    text-align: left;}
+		text-align: left;
+	    color: black;
+		font-size: 31px;}
 
 .nc2 { grid-area: nc2;
-  	text-align: left;}
+		text-align: left;
+		color: black;
+		font-size: 26px;}
 
 .nc3 { grid-area: nc3;
-  	text-align: left;}
+		text-align: left;
+		color: black;
+		font-size: 21px;}
 
 .nc4 { grid-area: nc4;
-    text-align: left;}
+		text-align: left;
+		color: black;
+		font-size: 16px;}
 
 .nc5 { grid-area: nc5;
-    text-align: left;}
+		text-align: left;
+		color: black;
+		font-size: 11px;}
 
 .pc1 { grid-area: pc1;
-    text-align: left;}
+		text-align: left;
+		color: black;
+		font-size: 31px;}
 
 .pc2 { grid-area: pc2;
-    text-align: left;}
+		text-align: left;
+		color: black;
+		font-size: 26px;}
 
 .pc3 { grid-area: pc3;
-    text-align: left;}
+		text-align: left;
+		color: black;
+		font-size: 21px;}
 
 .pc4 { grid-area: pc4;
-  	text-align: left;}
+		text-align: left;
+		color: black;
+		font-size: 16px;}
 
 .pc5 { grid-area: pc5;
-    text-align: left;}
+		text-align: left;
+		color: black;
+		font-size: 11px;}
 
 
 .header_mid { grid-area: header_mid;
@@ -178,7 +235,7 @@ footer {
 
 .footer_mid { grid-area: footer_mid;
 		text-align: center;
-    color: white;}
+        color: white;}
 
 /* Popup container */
 .popup {
@@ -223,9 +280,19 @@ footer {
   animation: fadeIn 1s
 }
 .popup > img {
-  width:10%;
+  width:20%;
   height: auto;
 }
+
+ .editimg img{
+  width:20%;
+  height: auto;
+ }
+  
+ .addimg img {
+	 width:10%;
+	 height: auto;
+ }
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
   from {opacity: 0;}
