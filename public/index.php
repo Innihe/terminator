@@ -8,10 +8,16 @@ setlocale(LC_TIME, "de_DE.utf8"); //Zeitumgebung Deutschland
 <script>
 
 //
-function popupUmschalten(arrayIndex) {
+function popupUmschalten(arrayIndex) 
   var popup = document.getElementById("myPopup"+arrayIndex);
   popup.classList.toggle("show");
 }
+
+function springeZuAktuell()
+{
+	document.getElementById('p0').scrollIntoView();
+}
+
 </script>
 	<head>
 		<link rel="stylesheet" href="stylesheet.css">
@@ -26,7 +32,7 @@ function popupUmschalten(arrayIndex) {
 			</div>
 		</div>
 
-	<footer>
+	<footer onload="springeZuAktuell();">
    <div id="extra">
 		 <img src="extra.png">
    </div>
