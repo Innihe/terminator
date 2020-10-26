@@ -6,6 +6,7 @@
     <title>Terminator</title>
   </head>
   <body>
+			<!-- Nur redirect auf Hauptseite -->
 		<?php header("Location: public/index.php");
 		die(); ?>
   </body>
