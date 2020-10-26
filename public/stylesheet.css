@@ -52,6 +52,10 @@ footer {
   grid-area: termine;
 }
 .pa0 { grid-area: pa0;
+		border: 3px solid black;
+		border-right:none;
+		border-radius: 20% 0% 0% 20%;
+		background: #F5F5F5;
 		text-align: right;
 		padding-right:20px;
 		color: black;
@@ -119,8 +123,11 @@ footer {
 
 .pb0 { grid-area: pb0;
 		border: 3px solid black;
+		border-right: none;
+		border-left: none;
+		background: #F5F5F5;
 		text-align: left;
-		color: white;
+		color: black;
 		font-size: 36px;}
 
 .nb1 { grid-area: nb1;
@@ -174,59 +181,63 @@ footer {
 		font-size: 11px;}
 
 .pc0 { grid-area: pc0;
+		border: 3px solid black;
+		border-left:none;
+		border-radius: 0% 20% 20% 0%;
+		background: #F5F5F5;
 		text-align: left;
 	    color: black;
-		font-size: 36px;}
+	}
 
 .nc1 { grid-area: nc1;
 		text-align: left;
 	    color: black;
-		font-size: 31px;}
+	}
 
 .nc2 { grid-area: nc2;
 		text-align: left;
 		color: black;
-		font-size: 26px;}
+	}
 
 .nc3 { grid-area: nc3;
 		text-align: left;
 		color: black;
-		font-size: 21px;}
+	}
 
 .nc4 { grid-area: nc4;
 		text-align: left;
 		color: black;
-		font-size: 16px;}
+	}
 
 .nc5 { grid-area: nc5;
 		text-align: left;
 		color: black;
-		font-size: 11px;}
+	}
 
 .pc1 { grid-area: pc1;
 		text-align: left;
 		color: black;
-		font-size: 31px;}
+	}
 
 .pc2 { grid-area: pc2;
 		text-align: left;
 		color: black;
-		font-size: 26px;}
+	}
 
 .pc3 { grid-area: pc3;
 		text-align: left;
 		color: black;
-		font-size: 21px;}
+	}
 
 .pc4 { grid-area: pc4;
 		text-align: left;
 		color: black;
-		font-size: 16px;}
+		}
 
 .pc5 { grid-area: pc5;
 		text-align: left;
 		color: black;
-		font-size: 11px;}
+		}
 
 
 .header_mid { grid-area: header_mid;
@@ -282,11 +293,13 @@ footer {
 .popup > img {
   width:20%;
   height: auto;
+  float:left;
 }
 
  .editimg img{
   width:20%;
   height: auto;
+  float: left;
  }
   
  .addimg img {

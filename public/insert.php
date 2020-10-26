@@ -6,7 +6,7 @@
     <title></title>
   </head>
   <body>
-    <form action="" method="post">
+    <form action="../private/addsend.php" method="post">
       <input type="text" name="title" placeholder="Titel">
       <br>
       <input type="date" name="date" placeholder="Datum">

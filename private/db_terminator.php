@@ -70,6 +70,20 @@
 		db_Close($conn); // Verbindung über db_Close() schliessen, $conn Objekt übergeben
 	}
 	
+	function db_AddTermin($datum, $ersteller, $fach, $notizen, $titel, $uhrzeit, $art)
+	{
+		$conn = db_Connect(); //Funktion db_Connect() nutzen um Verbindung herzustellen und Rückgabeobjekt in $conn speichern
+		
+			//Insert mit Prepared Statement
+			$insertStatement = $conn->prepare("INSERT INTO termine (Datum, Ersteller, Fach, Notizen, Titel, Uhrzeit, Art)
+												VALUES (?,?,?,?,?,?,?)")
+							or die($conn->error);
+			$insertStatement->bind_param("sssssss", $datum, $ersteller, $fach, $notizen, $titel, $uhrzeit, $art);
+			$insertStatement->execute();
+
+		db_Close($conn); // Verbindung über db_Close() schliessen, $conn Objekt übergeben
+	}
+	
 	function db_Close($conn)
 	{
 		

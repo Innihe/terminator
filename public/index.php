@@ -29,10 +29,6 @@ function popupUmschalten(arrayIndex)
 			
 			</div>
 		</div>
-
-	<footer>
->
-	</footer>
 	</body>
 
 
