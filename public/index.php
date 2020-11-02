@@ -24,7 +24,7 @@ function popupUmschalten(arrayIndex)
 	<body>
 		<div class="grid-container">
 			<?php zeigeTermine(); ?>
-			<div class="header_mid"><h4>TERMINATOR</h4></div>
+			<div class="header_mid"><h1>TERMINATOR</h1></div>
 			<div class="footer_mid">
 			
 			</div>
