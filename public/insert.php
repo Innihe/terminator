@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+  		<link rel="stylesheet" href="stylesheet.css">
+		<title>Terminator</title>
     <meta charset="utf-8">
     <title></title>
   </head>
