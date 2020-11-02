@@ -34,21 +34,21 @@ footer {
 
 .termine {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
-    "pa5 pb5 pc5"
-    "pa4 pb4 pc4"
-    "pa3 pb3 pc3"
-    "pa2 pb2 pc2"
-    "pa1 pb1 pc1"
-    "pa0 pb0 pc0"
-    "na1 nb1 nc1"
-    "na2 nb2 nc2"
-    "na3 nb3 nc3"
-    "na4 nb4 nc4"
-    "na5 nb5 nc5";
+    "pa5 pb5 pc5 pd5"
+    "pa4 pb4 pc4 pd4"
+    "pa3 pb3 pc3 pd3"
+    "pa2 pb2 pc2 pd2"
+    "pa1 pb1 pc1 pd1"
+    "pa0 pb0 pc0 pd0"
+    "na1 nb1 nc1 nd1"
+    "na2 nb2 nc2 nd2"
+    "na3 nb3 nc3 nd3"
+    "na4 nb4 nc4 nd4"
+    "na5 nb5 nc5 nd5";
   grid-area: termine;
 }
 .pa0 { grid-area: pa0;
@@ -179,14 +179,16 @@ footer {
 		text-align: left;
 		color: green;
 		font-size: 11px;}
+		
+		
 
-.pc0 { grid-area: pc0;
+.pc0 {  grid-area: pc0;
 		border: 3px solid black;
-		border-left:none;
-		border-radius: 0% 20% 20% 0%;
+		border-right: none;
+		border-left: none;
 		background: #F5F5F5;
 		text-align: left;
-	    color: black;
+		color: black;
 	}
 
 .nc1 { grid-area: nc1;
@@ -238,7 +240,65 @@ footer {
 		text-align: left;
 		color: black;
 		}
+		
+.pd0 {  grid-area: pd0;
+		border: 3px solid black;
+		border-left:none;
+		border-radius: 0% 20% 20% 0%;
+		background: #F5F5F5;
+		text-align: left;
+	    color: black;
 
+}
+.nd1 { grid-area: nd1;
+		text-align: left;
+		color: red;
+		font-size: 31px;}
+
+.nd2 { grid-area: nd2;
+		text-align: left;
+		color: red;
+		font-size: 26px;}
+
+.nd3 { grid-area: nd3;
+		text-align: left;
+		color: red;
+		font-size: 21px;}
+
+.nd4 { grid-area: nd4;
+		text-align: left;
+		color: red;
+		font-size: 16px;}
+
+.nd5 { grid-area: nd5;
+		text-align: left;
+		color: red;
+		font-size: 11px;}
+
+.pd1 { grid-area: pd1;
+		text-align: left;
+		color: green;
+		font-size: 31px;}
+
+.pd2 { grid-area: pd2;
+		text-align: left;
+		color: green;
+		font-size: 26px;}
+
+.pd3 { grid-area: pd3;
+		text-align: left;
+		color: green;
+		font-size: 21px;}
+
+.pd4 { grid-area: pd4;
+		text-align: left;
+		color: green;
+		font-size: 16px;}
+
+.pd5{ grid-area: pd5;
+		text-align: left;
+		color: green;
+		font-size: 11px;}
 
 .header_mid { grid-area: header_mid;
 		text-align: center;
@@ -304,8 +364,10 @@ footer {
   
  .addimg img {
 	 width:10%;
+	 margin-bottom:0%;
 	 height: auto;
  }
+ 
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
   from {opacity: 0;}
@@ -316,3 +378,64 @@ footer {
   from {opacity: 0;}
   to {opacity:1 ;}
 }
+
+form {
+	margin-top: 2%;
+    text-align: center;
+}
+
+input[type=text] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid orange;
+  box-sizing: border-box;
+  background-color: #F5F5F5;
+  color: black;
+}
+
+input[type=date] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid orange;
+  box-sizing: border-box;
+  background-color: #F5F5F5;
+  color: black;
+}
+input[type=time] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid orange;
+  box-sizing: border-box;
+  background-color: #F5F5F5;
+  color: black;
+}
+
+input[type=text]:focus {
+  border: 3px solid blue;
+}
+
+input[type=time]:focus {
+  border: 3px solid blue;
+}
+
+input[type=date]:focus {
+  border: 3px solid blue;
+}
+
+button[type=submit]{
+	
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid orange;
+  box-sizing: border-box;
+  background-color: #555555;
+  color: orange;
+  cursor: pointer;
+}
+
+
+
