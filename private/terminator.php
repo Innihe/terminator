@@ -90,7 +90,7 @@ function zeigeTermine($offset = 0)
 		//zweite Zeile erstellt Popup für Eintrag mithilfe von terminMehrInfo()
 		//dritte Zeile bindet Edit Button ein
 		echo "<div class='na".$cssClass."'>".strftime("%a", strtotime($terminArray[$i]["Datum"]))."  ".date('d.m.Y', strtotime($terminArray[$i]["Datum"]))."</div><div class='nb".$cssClass."'>".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
-		echo "<div class='nc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div></div>";
+		echo "<div class='nc".$cssClass."'><div class='popup' ><img  onclick='popupUmschalten(".$i.")' title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div></div>";
 		echo "<div class='nd".$cssClass."'><div class='editimg'><a href='../private/edit.php?id=".$terminArray[$i]["ID"]."'><img title='edit' src='edit.png'/></a></div></div>";
 		
 	}
