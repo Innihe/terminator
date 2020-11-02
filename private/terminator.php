@@ -75,8 +75,8 @@ function zeigeTermine($offset = 0)
 		//zweite Zeile erstellt Popup Button und Popup Inhalt mithilfe von terminMehrInfo()
 		//dritte Zeile bindet Edit Button ein
 		echo "<div class='pa".$cssClass."'>".strftime("%a", strtotime($terminArray[$i]["Datum"]))."  ".date('d.m.Y', strtotime($terminArray[$i]["Datum"]))."</div><div class='pb".$cssClass."'> ".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
-		echo "<div class='pc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div>";
-		echo "<a href='../private/edit.php?id=".$terminArray[$i]["ID"]."'><div class='editimg'><img title='edit' src='edit.png'/></div></a></div>";
+		echo "<div class='pc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div></div>";
+		echo "<div class='pd".$cssClass."'><div class='editimg'><a href='../private/edit.php?id=".$terminArray[$i]["ID"]."'><img title='edit' src='edit.png'/></a></div></div>";
 		//WIP Formular als Popup echo "<div class='pc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i."edit)'><img title='edit' src='edit.png'/>".editFormular($i)."</div>";
 	}
 	
@@ -90,8 +90,8 @@ function zeigeTermine($offset = 0)
 		//zweite Zeile erstellt Popup für Eintrag mithilfe von terminMehrInfo()
 		//dritte Zeile bindet Edit Button ein
 		echo "<div class='na".$cssClass."'>".strftime("%a", strtotime($terminArray[$i]["Datum"]))."  ".date('d.m.Y', strtotime($terminArray[$i]["Datum"]))."</div><div class='nb".$cssClass."'>".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
-		echo "<div class='nc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div>";
-		echo "<a href='../private/edit.php?id=".$terminArray[$i]["ID"]."'><div class='editimg'><img title='edit' src='edit.png'/></div></a></div>";
+		echo "<div class='nc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i.")'><img title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div></div>";
+		echo "<div class='pd".$cssClass."'><div class='editimg'><a href='../private/edit.php?id=".$terminArray[$i]["ID"]."'><img title='edit' src='edit.png'/></a></div></div>";
 		
 	}
 	
