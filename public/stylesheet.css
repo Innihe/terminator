@@ -1,9 +1,8 @@
 html {
   font-size: 16px;
   background-color: grey;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Tahoma, Geneva, sans-serif;
 }
-
 
 body {
   background-color: grey;
@@ -20,7 +19,6 @@ footer {
  
 }
 
-
 .grid-container {
   display: grid;
   grid-template-columns: 2fr auto 2fr;
@@ -34,7 +32,7 @@ footer {
 
 .termine {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 0.4fr 1fr 0.1fr 0.1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
@@ -51,6 +49,7 @@ footer {
     "na5 nb5 nc5 nd5";
   grid-area: termine;
 }
+
 .pa0 { grid-area: pa0;
 		border: 3px solid orange;
 		border-right:none;
@@ -122,6 +121,7 @@ footer {
 		font-size: 11px;}
 
 .pb0 { grid-area: pb0;
+		padding-left:32.5%;
 		border: 3px solid orange;
 		border-right: none;
 		border-left: none;
@@ -131,63 +131,71 @@ footer {
 		font-size: 36px;}
 
 .nb1 { grid-area: nb1;
+        padding-left:32.5%;
 		text-align: left;
 		color: red;
 		font-size: 31px;}
 
 .nb2 { grid-area: nb2;
+		padding-left:32.5%;
 		text-align: left;
 		color: red;
 		font-size: 26px;}
 
 .nb3 { grid-area: nb3;
+		padding-left:32.5%;
 		text-align: left;
 		color: red;
 		font-size: 21px;}
 
 .nb4 { grid-area: nb4;
+		padding-left:32.5%;
 		text-align: left;
 		color: red;
 		font-size: 16px;}
 
 .nb5 { grid-area: nb5;
+		padding-left:32.5%;
 		text-align: left;
 		color: red;
 		font-size: 11px;}
 
 .pb1 { grid-area: pb1;
+		padding-left:32.5%;
 		text-align: left;
 		color: green;
 		font-size: 31px;}
 
 .pb2 { grid-area: pb2;
+		padding-left:32.5%;
 		text-align: left;
 		color: green;
 		font-size: 26px;}
 
 .pb3 { grid-area: pb3;
+		padding-left:32.5%;
 		text-align: left;
 		color: green;
 		font-size: 21px;}
 
 .pb4 { grid-area: pb4;
+		padding-left:32.5%;
 		text-align: left;
 		color: green;
 		font-size: 16px;}
 
 .pb5 { grid-area: pb5;
+		padding-left:32.5%;
 		text-align: left;
 		color: green;
 		font-size: 11px;}
 		
-		
-
-.pc0 {  grid-area: pc0;
+.pc0 { grid-area:pc0;
 		border: 3px solid orange;
 		border-right: none;
 		border-left: none;
 		background: #F5F5F5;
-		text-align: left;
+		text-align: center;
 		color: black;
 	}
 
@@ -241,7 +249,7 @@ footer {
 		color: black;
 		}
 		
-.pd0 {  grid-area: pd0;
+.pd0 { grid-area: pd0;
 		border: 3px solid orange;
 		border-left:none;
 		border-radius: 0% 20% 20% 0%;
@@ -250,6 +258,7 @@ footer {
 	    color: black;
 
 }
+
 .nd1 { grid-area: nd1;
 		text-align: left;
 		color: red;
@@ -295,7 +304,7 @@ footer {
 		color: green;
 		font-size: 16px;}
 
-.pd5{ grid-area: pd5;
+.pd5 { grid-area: pd5;
 		text-align: left;
 		color: green;
 		font-size: 11px;}
@@ -350,16 +359,19 @@ footer {
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
 }
+
 .popup > img {
-  width:20%;
+  width:100%;
   height: auto;
-  float:left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
  .editimg img{
-  width:20%;
+  width:100%;
   height: auto;
-  float: left;
+
  }
   
  .addimg img {
@@ -403,6 +415,7 @@ input[type=date] {
   background-color: #F5F5F5;
   color: black;
 }
+
 input[type=time] {
   width: 60%;
   padding: 12px 20px;
