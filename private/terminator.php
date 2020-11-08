@@ -54,13 +54,16 @@ function naechsterTermin($ergebnisArray)
 	return $naechsterTerminIndex;	
 }
 
+
+
 //$offset als signed integer um gewählten Termin zu ändern (in relation zum zeitlich nächsten Termin) +1, +2, -1, -2 usw
 function zeigeTermine($offset = 0)
 {
 	$terminArray = terminArray();
 	$naechsterTermin = naechsterTermin($terminArray) + $offset;
 	$anzahlTermine = count($terminArray);
-	
+	$testhack = 0;
+
 	echo "<div class='footer_mid'><a href='insert.php'><div class='addimg'><img title='add' src='extra.png'/></a></div></div>";
 	
 	echo"<div class='termine'>";
@@ -68,6 +71,7 @@ function zeigeTermine($offset = 0)
 	//Vom Index naechsterTermin bis Index 0 Einträge bauen
 	for($i = $naechsterTermin; $i >= 0; $i--)
 	{
+		
 		//CSS Selektor (div class) generieren, p{nummer} // p = positiv -> in der Zukunft vom Startpunkt
 		$cssClass = ($naechsterTermin - $i);
 		
@@ -78,6 +82,8 @@ function zeigeTermine($offset = 0)
 		echo "<div class='pc".$cssClass."'><div class='popup'><img onclick='popupUmschalten(".$i.")' title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div></div>";
 		echo "<div class='pd".$cssClass."'><div class='editimg'><a href='../private/edit.php?id=".$terminArray[$i]["ID"]."'><img title='edit' src='edit.png'/></a></div></div>";
 		//WIP Formular als Popup echo "<div class='pc".$cssClass."'><div class='popup' onclick='popupUmschalten(".$i."edit)'><img title='edit' src='edit.png'/>".editFormular($i)."</div>";
+		$testhack++;
+		if($testhack == 6){ $testhack = 0; break;}
 	}
 	
 	//Von Index (naechsterTermin + 1) bis zum Ende des Arrays Einträge bauen
@@ -92,7 +98,8 @@ function zeigeTermine($offset = 0)
 		echo "<div class='na".$cssClass."'>".strftime("%a", strtotime($terminArray[$i]["Datum"]))."  ".date('d.m.Y', strtotime($terminArray[$i]["Datum"]))."</div><div class='nb".$cssClass."'>".$terminArray[$i]["Titel"]." ".$terminArray[$i]["Fach"]."</div>";
 		echo "<div class='nc".$cssClass."'><div class='popup' ><img  onclick='popupUmschalten(".$i.")' title='moreInfo' src='burgermenu.png'/>".terminMehrInfo($terminArray, $i)."</div></div>";
 		echo "<div class='nd".$cssClass."'><div class='editimg'><a href='../private/edit.php?id=".$terminArray[$i]["ID"]."'><img title='edit' src='edit.png'/></a></div></div>";
-		
+		$testhack++;
+		if($testhack == 5){ $testhack = 0; break;}
 	}
 	
 	echo"</div>";
